@@ -1,11 +1,11 @@
-import './List.css';
+import './TodoList.css';
 import Todo from '../todo/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTodo, toggleStatusTodo } from '../../redux/modules/todos';
 import axios from 'axios';
 
-// const List = ({ todos, setTodos }) => {
-const List = () => {
+// const TodoList = ({ todos, setTodos }) => {
+const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todoList);
   console.log(todos);
@@ -79,8 +79,8 @@ const List = () => {
 };
 
 // 만약 todos가 0개일 때, 받아올 프롭이 없다고 오류 생기는 것을 방지
-List.defaultProps = {
+TodoList.defaultProps = {
   todos: [],
 }; // todo 0개여도 undefined 아니다! 빈배열 "있다"!!
 
-export default List;
+export default TodoList;

@@ -2,16 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
-import { db } from './firebase';
-import { useEffect } from 'react';
 
 function App() {
-
-  // 파이어스토어 연결부
-  useEffect(() => {
-    console.log(db);
-  }, []);
-
 
   return (
     <>

@@ -1,7 +1,7 @@
 import Layout from '../components/layout/Layout';
 import Header from '../components/header/Header';
 import Form from '../components/form/Form';
-import List from '../components/list/List';
+import TodoList from '../components/todolist/TodoList';
 
 function Home() {
   // const [todos, setTodos] = useState([
@@ -25,8 +25,8 @@ function Home() {
     <>
       <Layout>
         <Header />
-        <Form/>
-        <List/>
+        <Form />
+        <TodoList />
       </Layout>
     </>
   );
