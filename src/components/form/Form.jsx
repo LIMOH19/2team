@@ -1,7 +1,8 @@
 import './Form.css';
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../../redux/modules/todos';
+// import { addTodo } from '../../redux/modules/todos';
+import { todosActions } from '../redux/modules/todosSlice';
 import axios from 'axios';
 
 const Form = () => {
@@ -30,7 +31,7 @@ const Form = () => {
     console.log(createdAt);
     if (todo.title.trim() === '' || todo.content.trim() === '') return;
     // setTodos([...todos, { ...todo, id: num, createdAt }]);
-    dispatch(addTodo({ ...todo, id: dataId.current, createdAt }));
+    dispatch(todosActions.addTodo({ ...todo, id: dataId.current, createdAt }));
     setTodo(initialState);
 
     // 서버로도 저장해보기

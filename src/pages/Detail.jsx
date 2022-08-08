@@ -5,17 +5,18 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getTodoByID } from '../redux/modules/todos';
+// import { getTodoByID } from '../redux/modules/todos';
+import { todosActions } from '../redux/modules/todosSlice';
 
 const Detail = () => {
   const { id } = useParams();
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const todo = useSelector((state) => state.todos.todo);
+  const todo = useSelector((state) => state.todosSlice.todo);
   // console.log(todo);
 
   useEffect(() => {
-    dispatch(getTodoByID(id));
+    dispatch(todosActions.getTodoByID(id));
   }, [dispatch, id]);
 
   return (
