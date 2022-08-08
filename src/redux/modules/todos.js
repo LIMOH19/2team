@@ -1,10 +1,8 @@
-import axios from 'axios';
-
 // Action value
-const ADD_TODO = 'ADD_TODO';
-const GET_TODO_BY_ID = 'GET_TODO_BY_ID';
-const DELETE_TODO = 'DELETE_TODO';
-const TOGGLE_STATUS_TODO = 'TOGGLE_STATUS_TODO';
+const ADD_TODO = "ADD_TODO";
+const GET_TODO_BY_ID = "GET_TODO_BY_ID";
+const DELETE_TODO = "DELETE_TODO";
+const TOGGLE_STATUS_TODO = "TOGGLE_STATUS_TODO";
 
 // Action Creator
 export const addTodo = (payload) => {
@@ -35,39 +33,32 @@ export const getTodoByID = (payload) => {
   };
 };
 
-// axios 불러오기 확인용
-// axios를 통해서 get 요청을 하는 함수를 생성합니다.
-// 비동기처리를 해야하므로 async/await 구문을 통해서 처리합니다.
-const fetchTodos = async () => {
-  const { data } = await axios.get('http://localhost:3001/todoList');
-  console.log(data); // 서버로부터 fetching한 데이터를 useState의 state로 set 합니다.
-};
-
-fetchTodos(); // 이걸 리덕스 초기state로 넣으려면 어캄..?
-
-
 // initial state
 const initialState = {
   todoList: [
-    {
-      id: 1,
-      title: '리액트 공부하기',
-      content: '인강 범위까지 다 보기',
-      isDone: false,
-      createdAt: 1659311283308,
-    },
-    {
-      id: 2,
-      title: 'JS 기초개념',
-      content: '개념 노트 정리하기',
-      isDone: true,
-      createdAt: 1659341238308,
-    },
+    // {
+    //   id: 1,
+    //   title: "리액트 공부하기",
+    //   content: "인강 범위까지 다 보기",
+    //   writer: "스파르타",
+    //   isDone: false,
+    //   createdAt: 1659311283308,
+    // },
+    // {
+    //   id: 2,
+    //   title: "JS 기초개념",
+    //   content: "개념 노트 정리하기",
+    //   writer: "르탄이",
+    //   isDone: true,
+    //   createdAt: 1659341238308,
+    // },
   ],
   todo: {
-    id: '0',
-    title: '',
-    content: '',
+    id: "0",
+    title: "",
+    content: "",
+    writer: "",
+    image: "",
     isDone: false,
     createdAt: null,
   },
@@ -77,6 +68,10 @@ const initialState = {
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
+      const lastDodo = state.todoList[state.todoList.length - 1];
+      //빈 배열일 경우 nextId 는 1
+      const nextId = lastDodo ? lastDodo.id + 1 : 1;
+      action.payload.id = nextId;
       return {
         ...state,
         todoList: [...state.todoList, action.payload],

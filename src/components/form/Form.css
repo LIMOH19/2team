@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  gap: 20px;
+  padding: 50px;
+  gap: 10px;
 }
 
 .form-label {
@@ -16,14 +16,14 @@
 }
 
 .input-group {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   gap: 20px;
 }
 
 .add-input {
   height: 30px;
-  width: 240px;
+  width: 230px;
   border: none;
   border-radius: 10px;
   padding: 0 12px;
@@ -39,3 +39,5 @@
   font-weight: 500;
   font-size: 15px;
 }
+
+

@@ -1,7 +1,7 @@
 import Layout from '../components/layout/Layout';
 import Header from '../components/header/Header';
 import Form from '../components/form/Form';
-import TodoList from '../components/todolist/TodoList';
+import List from '../components/list/List';
 
 function Home() {
   // const [todos, setTodos] = useState([
@@ -25,11 +25,10 @@ function Home() {
     <>
       <Layout>
         <Header />
-        <Form />
-        <TodoList />
+        <Form/>
+        <List/>
       </Layout>
     </>
   );
 }
-
 export default Home;

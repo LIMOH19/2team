@@ -4,7 +4,7 @@
 
 .list-container > p {
   font-size: 17px;
-  border: 1px solid rebeccapurple;
+  
   border-radius: 10px;
   padding: 10px 15px;
   font-style: italic;
@@ -20,4 +20,6 @@
   /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: 12px;
+  
+  
 }

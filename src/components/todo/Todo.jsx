@@ -14,8 +14,10 @@ const Todo = ({ todo, onRemove, onEdit }) => {
     <>
       <div className='todo-container'>
         <div>
+          <img src={todo.image}></img>
           <h3>{todo.title}</h3>
           <p>{todo.content}</p>
+          <p className='writer'>작성자: {todo.writer}</p>
           <h5>{new Date(todo.createdAt).toLocaleString()}</h5>
         </div>
         <div className='button-set'>
@@ -25,9 +27,9 @@ const Todo = ({ todo, onRemove, onEdit }) => {
           >
             삭제
           </button>
-          <button className='button button-complete' onClick={() => onEdit(todo.id)}>
+          {/* <button className='button button-complete' onClick={() => onEdit(todo.id)}>
             {todo.isDone ? '취소' : '완료'}
-          </button>
+          </button> */}
           <button className='button' onClick={() => navigate(`/detail/${todo.id}`)}>상세</button>
         </div>
       </div>

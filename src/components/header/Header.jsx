@@ -6,8 +6,7 @@ const Header = () => {
 
   return (
     <div className='container'>
-      <div onClick={() => navigate('/')}>My Todo List</div>
-      <div>React</div>
+      <div onClick={() => navigate('/')}>🏠Home</div>  
     </div>
   );
 };
