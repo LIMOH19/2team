@@ -2,7 +2,7 @@ import './Form.css';
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 // import { addTodo } from '../../redux/modules/todos';
-import { todosActions } from '../redux/modules/todosSlice';
+import { todosActions } from '../../redux/modules/todosSlice';
 import axios from 'axios';
 
 const Form = () => {

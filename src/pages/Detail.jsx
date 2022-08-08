@@ -12,8 +12,9 @@ const Detail = () => {
   const { id } = useParams();
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const todo = useSelector((state) => state.todosSlice.todo);
-  // console.log(todo);
+  const todo = useSelector((state) => state.todos.todo);
+  // const { todo } = useSelector((state) => state.todos);
+  console.log(todo);
 
   useEffect(() => {
     dispatch(todosActions.getTodoByID(id));

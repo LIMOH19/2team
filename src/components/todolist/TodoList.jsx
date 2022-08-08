@@ -2,13 +2,13 @@ import './TodoList.css';
 import Todo from '../todo/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 // import { deleteTodo, toggleStatusTodo } from '../../redux/modules/todosSlice';
-import { todosActions } from '../redux/modules/todosSlice';
+import { todosActions } from '../../redux/modules/todosSlice';
 import axios from 'axios';
 
 // const TodoList = ({ todos, setTodos }) => {
 const TodoList = () => {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todosSlice.todoList);
+  const todos = useSelector((state) => state.todos.todoList);
   console.log(todos);
 
   // const onRemove = (todoId) => {

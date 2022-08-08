@@ -1,6 +1,6 @@
 // import { createStore, combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import todosSlice from '../modules/todosSlice.js';
+import todos from '../modules/todosSlice.js';
 
 // const rootReducer = combineReducers({
 //   todos,
@@ -9,7 +9,7 @@ import todosSlice from '../modules/todosSlice.js';
 
 const store = configureStore({
   reducer: {
-    todosSlice,
+    todos,
   },
 });
 
