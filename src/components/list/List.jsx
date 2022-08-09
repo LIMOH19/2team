@@ -3,6 +3,7 @@ import Todo from '../todo/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTodo, toggleStatusTodo } from '../../redux/modules/todos';
 
+
 // const List = ({ todos, setTodos }) => {
 const List = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const List = () => {
   // };
 
   const onEdit = (id) => {
-    dispatch(toggleStatusTodo(id));
+    dispatch(todosActions.toggleStatusTodo(id));
   };
 
   return (

@@ -1,9 +1,16 @@
-import { createStore, combineReducers } from 'redux';
-import todos from '../modules/todos.js';
+// import { createStore, combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import todos from '../modules/todosSlice.js';
 
-const rootReducer = combineReducers({
-  todos,
-}); // 다른 reducer들 추가로 있을 경우 말 그대로 combine 용도
-const store = createStore(rootReducer);
+// const rootReducer = combineReducers({
+//   todos,
+// });
+// const store = createStore(rootReducer);
+
+const store = configureStore({
+  reducer: {
+    todos,
+  },
+});
 
 export default store;
